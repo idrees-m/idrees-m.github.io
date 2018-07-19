@@ -60,9 +60,11 @@
   }
   #section1 {padding-top:0px;height:700px;color: #fff; background-color:#000000;}
   #section2 {padding-top:40px;height:500px;color: #fff; background-color: #0c2569;}
-  #section3 {padding-top:50px;padding-bottom:50px; color: #fff; background-color: #000099 }
-  #section4 {padding-top:50px;height:500px;color: #fff; background-color: #4000ff}
-  #section5 {padding-top:50px;height:500px;color: #fff;}
+  #section3 {padding-top:50px;padding-bottom:50px; color: #fff; background-color: #000099; }
+  #section4 {padding-top:50px;height:500px;color: #fff; background-color: #4000ff;}
+   #section51 {padding-top:50px;height:500px;color: #fff; }
+  
+  #section5 {padding-top:50px;height:500px;color: #fff; background-color: #8A2BE2;}
   #section6 {padding-top:50px;padding-bottom:40px;color: #fff; background-color: #0c2569;}
      .inter{
 	      visibility:hidden;
@@ -76,6 +78,28 @@
 	      visibility:hidden;
 			position:absolute;
 	 }
+	 .higher{
+	  border-radius:25px;
+	 
+	 }
+	 .matric{
+	     	  border-radius:25px;
+
+	 }
+	 .intermediate{
+	 	  border-radius:25px;
+
+	 }
+	 	  @media only screen and (max-width:500px){
+               .logo{
+			     display:none;
+			   
+			   }
+			   #section5{
+			   height:700px;
+			   }
+		  
+		  }
   
   </style>
 </head>
@@ -85,7 +109,7 @@
 	<div class="contain">
 	<div class="row">
 	<div class="col-lg-2">
-	 <img src="im.png">
+	 <img class="logo" src="im.png">
 	</div>
 	<div class="col-lg-10">
 		<br><br>
@@ -113,7 +137,7 @@
           <li><a href="#section2">About Me</a></li>
           <li><a href="#section3">Education</a></li>
           <li><a href="#section4">Skills</a></li>
-          <li></li>
+          <li><a href="#section5">Projects</a></li>
           <li><a href="#section6">Achievements</a></li>
         </ul>
       </div>
@@ -236,7 +260,7 @@
 <div class="container">
     <div class="row">
 	<div class="col-lg-12">
-	<h1 align="center">Skills</h1><br><br>
+	<h1 align="center"><span class="glyphicon glyphicon-wrench"></span> Skills</h1><br><br>
 	<div class="container">
   <div class="progress">
     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
@@ -263,7 +287,45 @@
 	</div>
 	</div>
  </div>
+ <div id="section51" class="container-fluid">
+</div>
 <div id="section5" class="container-fluid">
+<div class="container">
+	<div class="row">
+	<div class="col-lg-12">
+  <h1 align="center"><span class="glyphicon glyphicon-briefcase"></span>  My Projects</h1>
+  </div>
+  </div>
+  <br><br>
+  <div class="row">
+  	<div class="col-lg-3  wow slideInDown">
+           <video width="100%" height="100%" controls>
+  <source src="deptor.mp4" type="video/mp4">
+  <source src="deptor.ogg" type="video/ogg">
+   </video>
+  </div> 
+  	<div class="col-lg-1">
+	</div>
+  	<div class="col-lg-3 wow flip">
+	       <video  width="100%" height="100%" controls>
+  <source src="Quotes_app.mp4" type="video/mp4">
+  <source src="Quotes_app.ogg" type="video/ogg">
+  </video>
+  </div> 
+  	<div class="col-lg-1">
+	</div>
+  	<div class="col-lg-3  wow slideInUp">
+          <video width="100%" height="100%" controls>
+  <source src="deptor.mp4" type="video/mp4">
+  <source src="deptor.ogg" type="video/ogg">
+   </video>
+  </div> 
+  
+  </div>
+  
+
+
+</div>
 </div>
 <div id="section6" class="container-fluid">
   <div class="container">
@@ -298,6 +360,7 @@
   
   </div>
   
+  </div>
   </div>
   
     <script src="js/wow.min.js"></script>
