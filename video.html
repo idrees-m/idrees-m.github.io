@@ -1,0 +1,31 @@
+<html>
+ <head><title>Video</title>
+ 
+ <link rel="stylesheet" href="docstyle.css"/>
+ 
+ </head>
+ <body>
+ <pre>
+ 	  <h2"><b><u>Video in android app:</u></b></h2>
+	  
+	  
+	  step 1:
+	       put videoView in layout and video you want to show in raw folder(name of vid should be in small letters and give _ in name)
+      <strong>Note:</strong>in layout give framlayout under this define videoview tag make height of
+	  framelayout wrap_content to show contol on video not on bottom of parent...
+	  step 2:
+	     videoView = (VideoView) findViewById(R.id.videoView);
+        videoView.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.dem_video);
+		//its just like www but for video we use android.resource:// 
+		<strong>Note:</strong> we can also play online video on this by givig full url path
+		 like http:// 
+		//we cant put packagename in string directly but later we can change pkgname so getPackageName
+		//get packagename...
+        MediaController mediaController = new MediaController(this);
+		mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+		//mediaController is used for play pause forward and backward control...
+        
+		
+        videoView.start();// in last start ftn play video
+	  

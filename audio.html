@@ -1,0 +1,108 @@
+<html>
+ <head><title>Video</title>
+ 
+ <link rel="stylesheet" href="docstyle.css"/>
+ 
+ </head>
+ <body>
+ <pre>
+ 	  <h2><b><u>Audio in android app:</u></b></h2>
+	  
+	  
+	  <strong>Note:</strong>Long audio should play using mediaplayer while short clip sound 
+	  should play using soundPool...
+	  
+	   step 1:
+	       put audio you want to play in raw folder(name of aud should be in small letters and give _ in name)
+      
+	  step 2:
+	        MediaPlayer mp = MediaPlayer.create(this,R.raw.raygun);
+                mp.start();
+				//this play audio for us
+				
+	 <h3> For Volume Control:</h3>
+	            use seekBar in layout and give listener to it
+				
+				
+		AudioManager  audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		//get audio service of system
+        int maxVol = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+		// get max vol of system
+        final int curVol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+		//get current vol of audio
+         seekBar.setProgress(curVol);
+        seekBar.setMax(maxVol);
+         //we set max vol to seekBar so that it collibrate equal with each other.
+		 //otherwise vol cause max at 60% of seekBar..
+				
+				 seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,curVol,0 );
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+		
+		<h3>For Using Scrubber (to go seekbar with audio):</h3>
+		we take another seekbar for it... and give listener also
+		
+		  scrubber.setMax(mp.getDuration());
+		  //it get total duration of audio
+         new Timer().scheduleAtFixedRate(new TimerTask() {
+             @Override
+             public void run() {
+                 scrubber.setProgress(mp.getCurrentPosition());
+             }
+         },0,100);
+      
+			//timer is used seekbar acording to time.
+				 scrubber.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                  mp.seekTo(i);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+		
+		<h3>to pause and play audio: </h3>
+		public void pause(View view) {
+       if(mp != null)
+        mp.pause();
+        }
+
+       public void play(View view) {
+        mp.start();
+        }
+	
+	   public void Stop(View view) {
+	   if(mp !=null){
+        mp.release();
+		mp = null;
+		}
+    }
+	
+	</pre>
+	</body>
+	</html>
+
+	 

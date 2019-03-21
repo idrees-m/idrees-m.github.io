@@ -1,0 +1,76 @@
+
+<html>
+ <head><title>Animation documents</title>
+ 
+ <link rel="stylesheet" href="docstyle.css"/>
+ 
+ </head>
+ <body>
+  
+     <h1> Full NOtes about Animation</h1>
+ <pre>
+ 	  <h2"><b><u>Simple direct apply of animation to views:</u></b></h2>
+       
+       //  imageView.animate().alpha(0f).setDuration(2000); 
+	   alpha set opacity for view it will become invisible after two seconds...
+       // imageView.animate().translationYBy(-2000f).setDuration(2000);
+	  translationYBy method move view up and down -2000f mean pixel of screen should be given high to become offscreen.
+      //  imageView.animate().rotation(1800).setDuration(2000);	
+	  this rotate the view 1800 is angle through which you can rotate it how much u want...
+      /*  you can toggle effect by given boolean value once click will zoomin it and on other click will zoom out
+     	  if(shrink == false) {
+             imageView.animate().scaleX(0.5f).scaleY(0.5f).rotation(360).alpha(0.5f).setDuration(2500); scale increase/decrease size of view maintaine to center
+             shrink = true;
+         }else {
+             imageView.animate().scaleX(1f).scaleY(1f).rotation(-360).alpha(1f).setDuration(2500);
+             shrink = false;
+
+         }*/
+
+        //imageView.animate().translationXBy(1000).setDuration(2000);
+
+       // imageView.animate().rotation(3600).setDuration(3000);
+	   
+	   <h2><b><u>used loadAnimation funtion of class AnimationUtils to use xml animation from anim:</u></b></h2>
+	  
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
+        imageView.startAnimation(animation);
+		
+	   <h2><b><u>Giving Listener to animation:</u></b></h2>
+	     
+		 By giving listner you can do some event after animation end or start or repeat.
+		 
+		 <a href="animationListner.html"> View Detail </a>
+        
+	   <h2><b><u>To make animation global:</u></b></h2>
+
+		<a href="globalanimation.html">This will use for all in and out activity automatically</a>
+		
+	   <h2><b><u>Slide to dismiss/close activity:</u></b></h2>
+			   
+			   https://codinginflow.com/tutorials/android/slidr
+        
+		<h2><b><u> <a href="view_flipper.html">View Flipper Docs</a></u></b></h2>
+		
+		 
+		 <h2><b><u><a href="view_animation_with_libraray.html">Easily created view animation with library:</a></u></b></h2>
+		 		 
+		  
+		 <h2><b><u><a href="Circular_reveal.html">Circular Reveal Animation:</a></u></b></h2>
+		 
+		
+		  <h2><b><u><a href="drawable_animation.html">Drawable Animation:</a></u></b></h2>
+		 
+		
+		  <h2><b><u><a href="Shared_element.html">Shared Element Transition:</a></u></b></h2>
+		 
+		  
+		  <h2><b><u><a href="gradient_animated_background.html">Gradient Animated Background:</a></u></b></h2>
+		 
+	     <h2><b><u><a href="kenBurnsView.html">KenBurnsView:</a></u></b></h2>
+
+		
+		
+          </pre>
+ </body>
+ </html>
